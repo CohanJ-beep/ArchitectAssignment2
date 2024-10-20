@@ -4,17 +4,39 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>edu.sdccd.cisc191.template</groupId>
-        <artifactId>FinalProject</artifactId>
+        <groupId>edu.sdccd.cisc191.c</groupId>
+        <artifactId>FinalProject1</artifactId>
         <version>1.0.0</version>
     </parent>
     <artifactId>Client</artifactId>
+    <properties>
+        <maven.compiler.source>22</maven.compiler.source>
+        <maven.compiler.target>22</maven.compiler.target>
+    </properties>
 
     <dependencies>
         <dependency>
-            <groupId>edu.sdccd.cisc191.template</groupId>
+            <groupId>edu.sdccd.cisc191.c</groupId>
             <artifactId>Common</artifactId>
-            <version>${project.version}</version>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>edu.sdccd.cisc191.c</groupId>
+            <artifactId>Client</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>edu.sdccd.cisc191.c</groupId>
+            <artifactId>Server</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>17.0.2</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -58,7 +80,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>edu.sdccd.cisc191.template.Client</mainClass>
+                                    <mainClass>edu.sdccd.cisc191.c.client.Client</mainClass>
                                 </transformer>
                             </transformers>
                             <filters>

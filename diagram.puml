@@ -1,0 +1,151 @@
+@startuml
+
+class Book {
+    -String title
+    -String author
+    -String isbn
+    +getTitle()
+    +setTitle()
+    +getAuthor()
+    +setAuthor()
+    +getIsbn()
+    +setIsbn()
+}
+
+class Borrower {
+    -String name
+    -String borrowerId
+    +getName()
+    +setName()
+    +getBorrowerId()
+    +setBorrowerId()
+}
+
+class CustomerRequest {
+    -String requestId
+    -String requestType
+    +getRequestId()
+    +setRequestId()
+    +getRequestType()
+    +setRequestType()
+}
+
+class CustomerResponse {
+    -String responseId
+    -String responseType
+    +getResponseId()
+    +setResponseId()
+    +getResponseType()
+    +setResponseType()
+}
+
+interface Manageable {
+    +add()
+    +remove()
+    +update()
+}
+
+class MessageWrapper {
+    -Object message
+    +getMessage()
+    +setMessage()
+}
+
+class SerializationUtil {
+    +serialize(Object obj, String fileName)
+    +deserialize(String fileName)
+}
+
+class CustomerRequestTest {}
+class CustomerResponseTest {}
+class LibraryServiceTest {}
+class MyJavaTest {}
+
+class Operation {
+    +execute()
+}
+
+class GetAtIndex extends Operation {}
+class SetAtIndex extends Operation {}
+class FindIndexOf extends Operation {}
+class PrintAll extends Operation {}
+class DeleteAtIndex extends Operation {}
+class Expand extends Operation {}
+class Shrink extends Operation {}
+
+class ArrayMenu {
+    -Operation[] operations
+    +displayMenu()
+}
+
+class BookManager implements Manageable {
+    -List<Book> books
+    +add()
+    +remove()
+    +update()
+}
+
+class ClientHandler {
+    -Socket clientSocket
+    -LibraryService libraryService
+    +run()
+}
+
+class IOOperations {
+    +saveToFile(Object obj, String fileName)
+    +loadFromFile(String fileName)
+}
+
+class LibraryController {
+    -LibraryService libraryService
+    +handleRequest(CustomerRequest request)
+}
+
+class LibraryService {
+    -List<Book> books
+    +addBook(Book book)
+    +removeBook(Book book)
+    +findBookByIsbn(String isbn)
+    +getAllBooks()
+}
+
+class Server {
+    -ServerSocket serverSocket
+    +start()
+}
+
+class TwoDArrayMenu {
+    -Operation[][] operations
+    +displayMenu()
+}
+
+class ArrayMenuGUI {
+    -ArrayMenu arrayMenu
+    +displayGUI()
+}
+
+class Client {
+    -Socket socket
+    +sendRequest(CustomerRequest request)
+}
+
+class ClientMain {
+    +main(String[] args)
+}
+
+class LibraryManagementGUI {
+    -LibraryService libraryService
+    +displayGUI()
+}
+
+class LibraryClient {
+    -Client client
+    +sendRequest(CustomerRequest request)
+}
+
+class UserInterface {
+    +display()
+}
+
+@enduml
+

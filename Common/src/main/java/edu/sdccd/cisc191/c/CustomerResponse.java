@@ -1,4 +1,4 @@
-package edu.sdccd.cisc191.template;
+package edu.sdccd.cisc191.c;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,6 +10,8 @@ public class CustomerResponse {
 
     @JsonIgnore
     private static final ObjectMapper objectMapper = new ObjectMapper();
+    private String message;
+
     public static String toJSON(CustomerResponse customer) throws Exception {
         return objectMapper.writeValueAsString(customer);
     }
@@ -43,6 +45,8 @@ public class CustomerResponse {
         return lastName;
     }
 
+    public String getMessage(){ return message;}
+
     public void setId(Integer id) {
         this.id = id;
     }
@@ -53,5 +57,8 @@ public class CustomerResponse {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+    public void setMessage(String message) {
+        this.message = message;
     }
 }
